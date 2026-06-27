@@ -1,0 +1,242 @@
+body {
+font-family: 'Raleway', sans-serif;
+  background-color: #289dd2;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ height: 100vh;
+}
+
+
+
+/* ENCABEZADO */
+.header {
+  width: 100%;
+  background-color: #00ffff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  gap: 10px;
+}
+
+.logo-container {
+  position: absolute;
+  left: 20px;
+  display: flex;
+  align-items: center;
+
+}
+
+.logo {
+  height: 90px;      /* tamaño del logo */
+  width: auto;
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+  font-size: 26px;
+}
+
+/*Franja menu*/
+
+.top-bar {
+ max-width: 100%;
+  background-color: #fff; /* Franja blanca */
+  display: flex;
+  align-items: center;
+  padding: 30px 40px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  margin-top: 120px;
+  border-bottom: 1px solid #ccc;
+}
+
+.menu-icon {
+    cursor: pointer;
+  font-size: 28px;
+  margin-right: 15px;
+  color: #000; /* Color del ícono hamburguesa */
+}
+
+.menu-text {
+    cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+}
+
+.container {
+  background-color: #9fc5f8;
+  padding:35px;
+  border-radius: 10px;
+  width: 1000px;
+  max-width: 95%;
+  min-height: 520px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin-top: 200px;
+}
+
+.info-text {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+.icon {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 45px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 700px;
+  padding: 14px 18px;
+  font-size: 19px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid #999;
+  padding: 15px;
+  font-size: 20px;
+}
+
+th {
+  background-color: #fff4c2;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+td {
+  background-color: #eee;
+  font-size: 22px;
+  padding: 16px 14px;
+}
+
+.back-link {
+  color: #003366;
+  margin:30px 0 80px;
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/* PIE DE PÁGINA */
+.footer {
+  width: 100%;
+  background-color: #00ffff;
+  text-align: center;
+  padding: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: 16px;
+}
+
+.footer a {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* Enlaces */
+a, .forgot a, .footer a {
+  color: #2b78e4 !important;
+  text-decoration: underline !important;
+  font-weight: 500;
+}
+
+a:hover, .forgot a:hover, .footer a:hover {
+  color: #0047ab !important;
+  text-decoration: underline !important;
+}
+
+
+
+/* Menú lateral oculto por defecto */
+.sidebar {
+  position: fixed;
+  top: 120px; /* debajo del top-bar */
+  left: 0; /* fuera de la pantalla */
+  width: 0;
+  height: 100%;
+  background-color: transparent;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: width 0.3s ease, padding 0.3s ease;
+  z-index: 1000;
+  overflow:hidden
+}
+
+/* Cuando se muestre la ventana */
+.sidebar.active {
+  width: 250px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 2px 0 5px   rgba(0, 0, 0, 2);
+}
+
+/* Estilo opciones menu */
+.sidebar a {
+  text-decoration: none!important;
+  color: #000!important;
+  font-weight: 600;
+
+  background-color: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 8px ;
+  margin-top: 5px;
+  display: block;
+  cursor: pointer;
+}
+.sidebar a:hover {
+background-color: #e0e0e0
+}
+
+.session-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+

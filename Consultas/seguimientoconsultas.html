@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Gestión Librería Sueños</title>
+  <link rel="stylesheet" href="consultas.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="../img/logo.png" alt="Logo Librería Sueños" class="logo">
+    </div>
+    <div class="title">SISTEMA DE GESTIÓN LIBRERÍA SUEÑOS</div>
+  </header>
+    
+    <div class="top-bar"><span class="menu-icon">&#9776</span>
+    <span class="menu-text">MENÚ PRINCIPAL</span>
+    <span class="separator">/</span>
+    <span class="session-text">Sesión:
+        <span class="session-name">CONSULTAS</span></span></div>
+
+ <!-- Menú lateral desplegable -->
+<div class="sidebar" id="sidebar">
+  <a href="../Clientes/Clientes.html">Clientes</a>
+  <a href="../Productos/productos.html">Productos</a>
+  <a href="../Ventas/ventas.html">Ventas</a>
+  <a href="../Reportes/reportes.html">Reportes</a>
+  <a href="consultas.html">Consultas</a>
+  <a href="../Transacciones/transacciones.html">Transacciones</a>
+  <a href="../Menu principal/menu.html">Inicio</a>
+</div>
+       
+
+<!-- Franja blanca con pestañas -->
+<div class="barra-opciones">
+  <button class="opcion" onclick="location.href='../consultas/consultas.html'">Registrar consulta</button>
+  <button class="opcion activa" onclick="location.href='../consultas/seguimientoconsultas.html'">Seguimiento de consultas</button>
+</div>
+
+
+  <div class="container">
+    <!-- Icono y título -->
+    <div class="icon-container">
+      <i class="fa-solid fa-folder-open"></i>
+      <p class="subtitulo"></p><strong> Visualiza y gestiona las consultas realizadas por los clientes</strong></p>
+    </div>
+
+    <!-- Barra de búsqueda -->
+    <div class="search-box">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="27" cy="27" r="16" fill="none" stroke="#333" stroke-width="5"/>
+        <line x1="41" y1="41" x2="58" y2="58" stroke="#333" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <input id="buscar" type="text" placeholder="Buscar consultas..." aria-label="Buscar" oninput="filtrarTabla()" />
+    </div>
+
+
+<!-- Tabla -->
+  <table>
+    <thead>
+      <tr>
+        <th>CLIENTE</th>
+        <th>DESCRIPCIÓN</th>
+        <th>FECHA</th>
+        <th>ESTADO</th>
+      </tr>
+    </thead>
+    <tbody id="tabla-cuerpo">
+      <tr>
+        <td>Laura Toro</td>
+        <td class="descripcion">Disponibilidad libro El Principito</td>
+        <td>05/10/2025</td>
+        <td>
+          <div class="estado-rojo">SIN RESPONDER MÁS DE 24 HORAS</div>
+          <button class="btn" onclick="abrirModal('Responder a Laura Toro', this)">RESPONDER</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Andrés López</td>
+        <td class="descripcion">Solicitud de cambio de producto</td>
+        <td>06/10/2025</td>
+        <td>
+          <div class="estado-verde">RESUELTA</div>
+          <button class="btn" onclick="abrirModalRespuesta('Andres López', 'Se realizó el cambio correctamente.')">VER RESPUESTA</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+    <!-- Enlace al menú -->
+    <div class="volver">
+      <a href="../Menu principal/menu.html">← Volver al menú</a>
+    </div>
+  </div>
+
+
+<!-- Ventana  de responder -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal()">&times;</span>
+    <p id="modal-texto"></p>
+    <button id="btn-enviar" class="btn" onclick="enviarRespuesta()">Enviar</button>
+  </div>
+</div>
+
+<style>
+.modal {
+  display: none; 
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 320px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal textarea {
+  width: 100%;
+  border-radius: 6px;
+  padding: 6px;
+  margin-top: 10px;
+}
+
+.modal .btn {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #004a72;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal .btn:hover {
+  background-color: #006699;
+}
+</style>
+
+<script>
+let filaActual = null;
+let ultimaRespuesta = ""; // guardamos la respuesta enviada
+
+// Abrir modal al responder
+function abrirModal(texto, boton) {
+  filaActual = boton.closest('tr'); 
+  const modal = document.getElementById("modal");
+  const textoModal = document.getElementById("modal-texto");
+  const btnEnviar = document.getElementById("btn-enviar");
+
+  if (ultimaRespuesta && filaActual.querySelector(".estado-verde")) {
+    // Si ya está resuelta, mostrar la respuesta
+    textoModal.innerHTML = `<strong>Respuesta enviada:</strong><br><em>${ultimaRespuesta}</em>`;
+    btnEnviar.style.display = "none"; 
+  } else {
+    // Si no, mostrar textarea
+    textoModal.innerHTML = `
+      <strong>${texto}</strong><br><br>
+      <textarea id="respuesta" rows="4" placeholder="Escribe aquí tu respuesta..."></textarea>
+    `;
+    btnEnviar.style.display = "inline-block";
+  }
+
+  modal.style.display = "flex";
+}
+
+// Cierra modal
+function cerrarModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+// Enviar respuesta
+function enviarRespuesta() {
+  const respuesta = document.getElementById("respuesta").value.trim();
+  if (!respuesta) {
+    alert("Por favor escribe una respuesta antes de enviar.");
+    return;
+  }
+
+  ultimaRespuesta = respuesta; // guardamos
+
+  if (filaActual) {
+    // Cambiar estado
+    const estadoDiv = filaActual.querySelector(".estado-rojo");
+    if (estadoDiv) {
+      estadoDiv.textContent = "RESUELTA";
+      estadoDiv.classList.remove("estado-rojo");
+      estadoDiv.classList.add("estado-verde");
+    }
+
+    // Cambiar botón a VER RESPUESTA
+    const boton = filaActual.querySelector(".btn");
+    boton.textContent = "VER RESPUESTA";
+    boton.setAttribute("onclick", "abrirModal('Respuesta enviada', this)");
+  }
+
+  // Mostrar confirmación en modal
+  const textoModal = document.getElementById("modal-texto");
+  textoModal.innerHTML = `
+    ✅ Respuesta enviada correctamente:<br>
+    <em>${respuesta}</em>
+  `;
+
+  // Oculta botón enviar
+  document.getElementById("btn-enviar").style.display = "none";
+
+  // Cierra automáticamente después de 2 segundos
+  setTimeout(() => cerrarModal(), 2000);
+}
+</script>
+
+<!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <a href="#">Términos de uso</a> | 
+    <a href="#">Política de privacidad</a><br />
+    Versión 1.0 • Uso interno del sistema • 2025 Librería Sueños
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="seguimientoconsultas.js"></script>
+  
+</body>
+</html>

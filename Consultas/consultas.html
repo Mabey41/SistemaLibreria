@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Gestión Librería Sueños</title>
+  <link rel="stylesheet" href="consultas.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="../img/logo.png" alt="Logo Librería Sueños" class="logo">
+    </div>
+    <div class="title">SISTEMA DE GESTIÓN LIBRERÍA SUEÑOS</div>
+  </header>
+    
+    <div class="top-bar"><span class="menu-icon">&#9776</span>
+    <span class="menu-text">MENÚ PRINCIPAL</span>
+    <span class="separator">/</span>
+    <span class="session-text">Sesión:
+        <span class="session-name">CONSULTAS</span></span></div>
+
+ <!-- Menú lateral desplegable -->
+<div class="sidebar" id="sidebar">
+  <a href="../Clientes/Clientes.html">Clientes</a>
+  <a href="../Productos/productos.html">Productos</a>
+  <a href="../Ventas/ventas.html">Ventas</a>
+  <a href="../Reportes/reportes.html">Reportes</a>
+  <a href="consultas.html">Consultas</a>
+  <a href="../Transacciones/transacciones.html">Transacciones</a>
+  <a href="../Menu principal/menu.html">Inicio</a>
+</div>
+       
+
+<!-- Franja blanca con pestañas -->
+<div class="barra-opciones">
+  <button class="opcion activa" onclick="location.href='consultas.html'">Registrar consulta</button>
+  <button class="opcion" onclick="location.href='seguimientoconsultas.html'">Seguimiento de consultas</button>
+</div>
+
+
+<div class="contenido-registro">
+  <!-- Encabezado con icono y texto informativo -->
+  <div class="r-header">
+    <h2 class="r-icon">
+      <i class="fa-solid fa-file-pen"></i></h2>
+    <p class="r-sub">Ingrese la consulta del cliente a continuación</p>
+  </div>
+
+  <!-- Formulario -->
+  <div class="form-container">
+    <label for="cliente">
+      <i class="fa-solid fa-user"></i> Nombre del cliente:
+    </label>
+    <input type="text" id="cliente" placeholder="Buscar o escribir cliente" list="clientesList" />
+    <datalist id="clientesList">
+      <option value="Juan Pérez"></option>
+      <option value="María Lopez"></option>
+      <option value="Carlos Garcia"></option>
+      <option value="Ana Martinez"></option>
+    </datalist>
+
+
+    <label for="consulta">
+      <i class="fa-solid fa-file-lines"></i> Descripción consulta:
+    </label>
+    <textarea id="consulta" placeholder="Escriba la descripción de la consulta"></textarea>
+
+    <label for="fecha">
+      <i class="fa-solid fa-calendar-days"></i> Fecha:
+    </label>
+    <input type="date" id="fecha" readonly/>
+
+    <label for="estado">
+      <i class="fa-solid fa-arrow-down-short-wide"></i> Estado:
+    </label>
+    <select id="estado">
+      <option value="">Seleccione</option>
+      <option value="Pendiente">Pendiente</option>
+      <option value="Resuelto">Resuelto</option>
+    </select>
+
+    <button id="guardar">GUARDAR</button>
+    <button id="cancelar" class="link-btn">CANCELAR</button>
+  </div>
+</div>
+
+
+<!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <a href="#">Términos de uso</a> | 
+    <a href="#">Política de privacidad</a><br />
+    Versión 1.0 • Uso interno del sistema • 2025 Librería Sueños
+  </footer>
+
+  <script src="consultas.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+</body>
+</html>

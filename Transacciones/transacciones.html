@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Gestión Librería Sueños</title>
+  <link rel="stylesheet" href="transacciones.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+</head>
+<body>
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="../img/logo.png" alt="Logo Librería Sueños" class="logo">
+    </div>
+    <div class="title">SISTEMA DE GESTIÓN LIBRERÍA SUEÑOS</div>
+  </header>
+    
+    <div class="top-bar"><span class="menu-icon">&#9776</span>
+    <span class="menu-text">MENÚ PRINCIPAL</span>
+    <span class="separator">/</span>
+    <span class="session-text">Sesión:
+        <span class="session-name">TRANSACCIONES</span></span></div>
+
+ <!-- Menú lateral desplegable -->
+<div class="sidebar" id="sidebar">
+  <a href="../Clientes/Clientes.html">Clientes</a>
+  <a href="../Productos/productos.html">Productos</a>
+  <a href="../Ventas/ventas.html">Ventas</a>
+  <a href="../Reportes/reportes.html">Reportes</a>
+  <a href="../Consultas/consultas.html">Consultas</a>
+  <a href="transacciones.html">Transacciones</a>
+<a href="../Menu principal/menu.html">Inicio</a>
+</div>
+       
+
+  <div class="container">
+    <div class="info-text">Historial de transacciones</div>
+    <div class="icon" aria-label="Icono tarjeta de crédito">
+      <i class="fa-solid fa-credit-card fa-2x"></i>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Buscar por nombre, fecha, id" aria-label="Buscar transacciones" />
+    </div>
+
+    <table id="transactionsTable" aria-label="Tabla de transacciones">
+      <thead>
+        <tr>
+          <th>ID TRANSACCIONES</th>
+          <th>FECHA</th>
+          <th>CLIENTE</th>
+          <th>MÉTODO DE PAGO</th>
+          <th>N. DE REFERENCIA</th>
+          <th>TOTAL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>TX-001</td>
+          <td>5/10/2025 8:14</td>
+          <td>Laura Gómez</td>
+          <td>Nequi</td>
+          <td>12131415</td>
+          <td>40.000</td>
+        </tr>
+        <tr>
+          <td>TX-002</td>
+          <td>5/10/2025 8:35</td>
+          <td>Luis González</td>
+          <td>Bancolombia</td>
+          <td>12345678</td>
+          <td>45.000</td>
+        </tr>
+        <tr>
+          <td>TX-003</td>
+          <td>5/10/2025 8:45</td>
+          <td>María Menéndez</td>
+          <td>Efectivo</td>
+          <td></td>
+          <td>40.000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <a href="../Menu principal/menu.html" class="back-link" onclick="volverAlMenu()">VOLVER AL MENÚ</a>
+
+<!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <a href="#">Términos de uso</a> | 
+    <a href="#">Política de privacidad</a><br />
+    Versión 1.0 • Uso interno del sistema • 2025 Librería Sueños
+  </footer>
+
+  <script src="transacciones.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

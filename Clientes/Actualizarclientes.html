@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Gestión Librería Sueños</title>
+  <link rel="stylesheet" href="Clientes.css" />
+</head>
+<body>
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="../img/logo.png" alt="Logo Librería Sueños" class="logo">
+    </div>
+    <div class="title">SISTEMA DE GESTIÓN LIBRERÍA SUEÑOS</div>
+  </header>
+
+<div class="top-bar"><span class="menu-icon">&#9776</span>
+    <span class="menu-text">MENÚ PRINCIPAL</span>
+    <span class="separator">/</span>
+    <span class="session-text">Sesión:
+        <span class="session-name">CLIENTES</span></span></div>
+
+ <!-- Menú lateral desplegable -->
+<div class="sidebar" id="sidebar">
+  <a href="clientes.html">Clientes</a>
+  <a href="../Productos/productos.html">Productos</a>
+  <a href="../Ventas/ventas.html">Ventas</a>
+  <a href="../Reportes/reportes.html">Reportes</a>
+  <a href="../Consultas/consultas.html">Consultas</a>
+  <a href="../Transacciones/transacciones.html">Transacciones</a>
+  <a href="../Menu principal/menu.html">Inicio</a>
+</div>
+       
+<!-- Franja blanca con pestañas -->
+
+<div class="barra-opciones">
+  <button class="opcion" onclick="location.href='Clientes.html'">Registrar cliente</button>
+  <button class="opcion activa" onclick="location.href='Actualizarclientes.html'">Actualizar datos</button>
+</div>
+
+<!-- Texto informativo -->
+<div class="texto-indicacion">
+    <span class="icon-info">&#128269;</span>
+   <p> Por favor complete los campos que desea actualizar del cliente seleccionado</p>
+  </div>
+
+<!-- Buscador de clientes -->
+<div class="buscador">
+  <label for="buscarCliente"></span> Buscar cliente:</label>
+  <input type="text" id="buscarCliente" name="buscarCliente" placeholder="Ingrese nombre, apellido o documento" />
+  <button type="button" class="btn-buscar">Buscar</button>
+</div>
+
+    <!-- 🔹 Contenedor del formulario -->
+    <div class="container">
+
+      <!-- Formulario de registro -->
+      <form id="clientForm" autocomplete="off">
+        <label for="nombres"><span class="icon">&#128100;</span> Nombres:</label>
+        <input type="text" id="nombres" name="nombres" required />
+
+        <label for="apellidos"><span class="icon">&#128101;</span> Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required />
+
+        <label for="documento"><span class="icon">&#128221;</span> Documento:</label>
+        <select id="documento" name="documento" required>
+         <option value="CC">Cédula de ciudadanía</option>
+          <option value="TI">Tarjeta de identidad</option>
+          <option value="CE">Cédula de extranjería</option>
+          <option value="PA">Pasaporte</option>
+        </select>
+
+        <label for="noDocumento"><span class="icon">&#128221;</span> No. Documento:</label>
+        <input type="text" id="noDocumento" name="noDocumento" required pattern="\d+" title="Ingrese solo números" />
+
+        <label for="telefono"><span class="icon">&#128222;</span> No. Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required pattern="[0-9+\- ]+" title="Ingrese un número válido" />
+
+        <label for="fechaRegistro"><span class="icon">&#128197;</span> Fecha de registro:</label>
+        <input type="date" id="fechaRegistro" name="fechaRegistro" required readonly/> <!-- no se permite editar fecha-->
+
+        
+        <button type="submit"class="btn-guardar">ACTUALIZAR</button>
+        
+      </form>
+    </div>
+
+  
+
+
+    
+<!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <a href="#">Términos de uso</a> | 
+    <a href="#">Política de privacidad</a><br />
+    Versión 1.0 • Uso interno del sistema • 2025 Librería Sueños
+  </footer>
+
+  <script src="Actualizarclientes.js"></script>
+  <script src="Clientes.js"></script>
+
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

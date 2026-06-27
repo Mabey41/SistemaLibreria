@@ -1,0 +1,191 @@
+body {
+font-family: 'Raleway', sans-serif;
+  background-color: #289dd2;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ENCABEZADO */
+.header {
+  width: 100%;
+  background-color: #00ffff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.logo-container {
+  position: absolute;
+  left: 20px;
+
+}
+
+
+
+.title {
+  font-weight: bold;
+  text-align: center;
+  font-size: 26px;
+}
+
+/*Franja menu*/
+
+.top-bar {
+ max-width: 100%;
+  background-color: #fff; /* Franja blanca */
+  display: flex;
+  align-items: center;
+  padding: 30px 40px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  margin-top: 120px;
+  border-bottom: 1px solid #ccc;
+}
+
+.menu-icon {
+    cursor: pointer;
+  font-size: 28px;
+  margin-right: 15px;
+  color: #000; /* Color del ícono hamburguesa */
+}
+
+.menu-text {
+    cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+}
+
+
+/*MENU  */
+
+.menu-container {
+    text-align: center;
+    margin-top: 120px;
+    padding: 40px 0;
+}
+
+.menu-texto {
+    font-size: 28px;
+    font-weight: 600;
+    color: #003838;
+    margin-bottom: 50px;
+}
+
+
+
+/* Contenedor de botones */
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(3, 260px);
+    grid-gap: 40px 80px;
+    justify-content: center;
+}
+
+/* Botones del menú */
+.menu-button {
+    background-color: #9fc5f8;
+    border-radius: 10px;
+    box-shadow: 0 6px 0 #a9a9a9;
+    border: none;
+    padding: 60px 20px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s, box-shadow 0.2s, transform 0.2s;
+    user-select: none;
+}
+
+.menu-button{
+  line-height: 1.4;
+}
+
+.menu-button::first-line{
+  font-size: 38px;
+}
+
+.menu-button:hover {
+    background-color: #fff;
+    box-shadow: 0 2px 0 #777;
+    transform: translateY(3px);
+    color: #289dd2;
+}
+
+.menu-button.selected {
+    background-color: #007575;
+    color: white;
+    box-shadow: 0 2px 0 #004040;
+    transform: translateY(3px);
+}
+.menu-logo{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 80px;
+}
+
+/* PIE DE PÁGINA */
+.footer {
+  width: 100%;
+  background-color: #00ffff;
+  text-align: center;
+  padding: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: 16px;
+}
+
+.footer a {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+/*Enlaces generales */
+a {
+  color: #2b78e4;
+  text-decoration: underline;
+}
+
+/* Efecto mouse */
+a:hover {
+  color: #0056b3; /* Azul más oscuro al pasar el cursor */
+  text-decoration: underline;
+}
+
+/* Enlaces */
+a, .forgot a, .footer a {
+  color: #2b78e4 !important;
+  text-decoration: underline !important;
+  font-weight: 500;
+}
+
+a:hover, .forgot a:hover, .footer a:hover {
+  color: #0047ab !important;
+  text-decoration: underline !important;
+}
+.logo {
+  height: 90px;      /* tamaño del logo */
+  width: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;         /* separa el logo del texto */
+}
+
+

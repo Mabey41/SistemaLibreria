@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Gestión Librería Sueños</title>
+  <link rel="stylesheet" href="productos.css" />
+</head>
+<body>
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="../img/logo.png" alt="Logo Librería Sueños" class="logo">
+    </div>
+    <div class="title">SISTEMA DE GESTIÓN LIBRERÍA SUEÑOS</div>
+  </header>
+    
+    <div class="top-bar"><span class="menu-icon">&#9776</span>
+    <span class="menu-text">MENÚ PRINCIPAL</span>
+    <span class="separator">/</span>
+    <span class="session-text">Sesión:
+        <span class="session-name">PRODUCTOS</span></span></div>
+
+ <!-- Menú lateral desplegable -->
+<div class="sidebar" id="sidebar">
+  <a href="../Clientes/Clientes.html">Clientes</a>
+  <a href="productos.html">Productos</a>
+  <a href="../Ventas/ventas.html">Ventas</a>
+  <a href="../Reportes/reportes.html">Reportes</a>
+  <a href="../Consultas/consultas.html">Consultas</a>
+  <a href="../Transacciones/transacciones.html">Transacciones</a>
+  <a href="../Menu principal/menu.html">Inicio</a>
+</div>
+       
+<div class="container">
+    <div class="icono">📚</div>
+    <h2>Gestión de productos</h2>
+
+    <input type="search" id="searchInput" placeholder="Buscar productos" onkeyup="filtrarProductos()" />
+
+    <table id="productosTable">
+        <thead>
+            <tr>
+                <th>CÓDIGO</th>
+                <th>NOMBRE</th>
+                <th>DESCRIPCIÓN</th>
+                <th>PRECIO</th>
+                <th>DISPONIBILIDAD</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>El principito - Antoine de Saint-Exupéry</td>
+                <td>Pasta dura, ilustrado</td>
+                <td>45 000</td>
+                <td class="disponible">DISPONIBLE</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>Cien años de soledad - Gabriel García Márquez</td>
+                <td>Tapa blanda</td>
+                <td>35 000</td>
+                <td class="agotado">AGOTADO</td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>Rayuela - Julio Cortázar</td>
+                <td>Edición de bolsillo</td>
+                <td>30 000</td>
+                <td class="disponible">DISPONIBLE</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="volver-menu">
+        <a href="../Menu principal/menu.html">VOLVER AL MENÚ</a>
+    </div>
+</div>
+
+
+    
+<!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <a href="#">Términos de uso</a> | 
+    <a href="#">Política de privacidad</a><br />
+    Versión 1.0 • Uso interno del sistema • 2025 Librería Sueños
+  </footer>
+
+  <script src="productos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

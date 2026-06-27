@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Gestión Librería Sueños</title>
+  <link rel="stylesheet" href="ventas.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+</head>
+<body>
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="../img/logo.png" alt="Logo Librería Sueños" class="logo">
+    </div>
+    <div class="title">SISTEMA DE GESTIÓN LIBRERÍA SUEÑOS</div>
+  </header>
+    
+    <div class="top-bar"><span class="menu-icon">&#9776</span>
+    <span class="menu-text">MENÚ PRINCIPAL</span>
+    <span class="separator">/</span>
+    <span class="session-text">Sesión:
+        <span class="session-name">VENTAS</span></span></div>
+
+ <!-- Menú lateral desplegable -->
+<div class="sidebar" id="sidebar">
+  <a href="../Clientes/Clientes.html">Clientes</a>
+  <a href="../Productos/productos.html">Productos</a>
+  <a href="ventas.html">Ventas</a>
+  <a href="../Reportes/reportes.html">Reportes</a>
+  <a href="../Consultas/consultas.html">Consultas</a>
+  <a href="../Transacciones/transacciones.html">Transacciones</a>
+  <a href="../Menu principal/menu.html">Inicio</a>
+</div>
+       
+
+<body>
+  <div class="form-container">
+    <div class="icono">
+      <i class="fa-solid fa-dollar-sign"></i>
+    </div>
+    <p>Por favor, ingrese los datos requeridos</p>
+
+    <form id="salesForm">
+      <div class="form-group">
+        <label for="saleId"><i class="fa-regular fa-calendar-check icon-left"></i> ID de la venta:</label>
+        <input type="text" id="saleId" name="saleId" readonly />
+      </div>
+
+      <div class="form-group">
+        <label for="clientName"><i class="fa-solid fa-user icon-left"></i> Nombre del cliente:</label>
+        <input type="text" id="clientName" name="clientName" placeholder="Buscar o escribir cliente" autocomplete="off" list="client-list"/>
+        <datalist id="client-list">
+          <option value="Juan Perez">
+          <option value="Maria Lopez">
+          <option value="Carlos Garcia">
+          <option value="Ana Martinez">
+        </datalist>
+      </div>
+
+      <div class="form-group">
+        <label for="saleDate"><i class="fa-regular fa-calendar icon-left"></i> Fecha:</label>
+        <input type="text" id="saleDate" name="saleDate" readonly />
+      </div>
+
+      <div class="form-group">
+        <label for="paymentMethod"><i class="fa-solid fa-comments-dollar icon-left"></i> Método de pago:</label>
+        <select id="paymentMethod" name="paymentMethod" required>
+          <option value="Efectivo" selected>Efectivo</option>
+          <option value="Tarjeta">Tarjeta</option>
+          <option value="Transferencia">Transferencia</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="product"><i class="fa-regular fa-list-alt icon-left"></i> Productos:</label>
+        <input type="text" id="product" name="product" placeholder="Buscar y seleccionar producto" autocomplete="off" list="product-list" required/>
+        <datalist id="product-list">
+          <option value="El principito Antonie de Saint Exupéry">
+          <option value="Cien años de soledad Grabiel García Marquez">
+          <option value="Rayuela Julio Cortázar">
+        </datalist>
+      </div>
+
+      <div class="form-group">
+        <label for="quantity"><i class="fa-solid fa-boxes-packing icon-left"></i> Cantidad:</label>
+        <select id="quantity" name="quantity" required>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="total"><i class="fa-solid fa-money-bill-wave icon-left"></i> Total a pagar:</label>
+        <input type="text" id="total" name="total" readonly placeholder="(Automático)" />
+      </div>
+
+      <button type="submit" class="btn-submit">REGISTRAR VENTA</button>
+
+      <div class="cancelar">
+        <a href="#">CANCELAR</a>
+      </div>
+    </form>
+  </div>
+
+<!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <a href="#">Términos de uso</a> | 
+    <a href="#">Política de privacidad</a><br />
+    Versión 1.0 • Uso interno del sistema • 2025 Librería Sueños
+  </footer>
+
+  <script src="ventas.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
